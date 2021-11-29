@@ -22,7 +22,11 @@ public class Dialogue : MonoBehaviour
     public Button skipButton;
     void Start()
     {
-        nameDisplay.text = CharacterName;
+        if(CharacterName != "")
+        {
+            nameDisplay.text = CharacterName;
+        }
+
         dialogueFrame.SetActive(true);
         StartCoroutine(Type());
     }

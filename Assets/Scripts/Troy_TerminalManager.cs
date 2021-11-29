@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-
-public class TerminalManager : MonoBehaviour
+public class Troy_TerminalManager : MonoBehaviour
 {
     public GameObject directoryLine;
     public GameObject responseLine;
@@ -12,10 +12,10 @@ public class TerminalManager : MonoBehaviour
     public GameObject userInputLine;
     public ScrollRect scrollRect;
     public GameObject msgList;
-    Interpreter interpreter;
+    Troy_Interpreter interpreter;
     private void Start()
     {
-        interpreter = GetComponent<Interpreter>();
+        interpreter = GetComponent<Troy_Interpreter>();
     }
     private void OnGUI()
     {        
@@ -45,6 +45,19 @@ public class TerminalManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(interpreter.getKillerFileStatus())
+        {
+            LoadNextScene();
+        }
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(75);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     void ClearInputField()
     {
         terminalInput.text = "";

@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: user@PC:/home/$
+  m_Text: Troy@PC:/home/$
 --- !u!1 &509397827110861964
 GameObject:
   m_ObjectHideFlags: 0

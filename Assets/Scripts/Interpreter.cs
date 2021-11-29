@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class Interpreter : MonoBehaviour
 {
     List<string> response = new List<string>();
     public string victimDirectoryPath;
-    public Text directoryLineDisplay;
+    private void Start()
+    {
+        SimpleWebRequest();
+    }
 
+    IEnumerator SimpleWebRequest()
+    {
+        string path = "StreamingAssets/Victim Directories"; //This works because index.html is in the same folder as StreamingAssets ?
+        UnityWebRequest uwr = UnityWebRequest.Get(path);
+        yield return uwr.SendWebRequest();
+    }
     public List<string> Interpret(string userInput)
     {
         response.Clear();
@@ -39,6 +49,9 @@ public class Interpreter : MonoBehaviour
                 case "tail":
                     response.Add("Show the last 10 lines of the file.");
                     response.Add("Add a number to the command to change how many lines are shown.");
+                    break;
+                case "exit":
+                    response.Add("Log out of the current session.");
                     break;
                 case "":
                     response.Add("Must supply a command to do a 'man' search!");
@@ -97,7 +110,6 @@ public class Interpreter : MonoBehaviour
             if(file.Extension != ".meta")
                 response.Add(file.Name);
         }
-        Debug.Log("Diretories and Files added to list");
         return response;
      }
     // void chmod(string path, string perms)
