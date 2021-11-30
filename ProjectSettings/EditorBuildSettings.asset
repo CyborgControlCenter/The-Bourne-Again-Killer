@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/OutdoorTransition.unity
     guid: f567237ad653eae44b55782b658233b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dialouge.unity
     guid: fc00dd33ecd39564e844c305b4320c91
   - enabled: 0
