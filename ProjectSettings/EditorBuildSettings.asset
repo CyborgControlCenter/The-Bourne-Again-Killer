@@ -11,22 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b637010c3091eca40be28fccdf4ebf3c
+  - enabled: 1
+    path: Assets/Scenes/IntroDialogue.unity
+    guid: 036d5cfd5173e044fb1a6714bfb22830
+  - enabled: 1
+    path: Assets/Scenes/ConnorApartment.unity
+    guid: b02194131b992be49b491519f3eab6c6
+  - enabled: 1
+    path: Assets/Scenes/TroyTerminal.unity
+    guid: 2346850b88b8d5c4d8fbbf63cac95cde
+  - enabled: 1
+    path: Assets/Scenes/AlphaThankYou.unity
+    guid: 27bb8c58236bd8b418a05b75c8b7f3e9
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Game Intro.unity
-    guid: 5166cb8ef445afa459a949eb3cc95140
-  - enabled: 0
-    path: Assets/Scenes/OutdoorTransition.unity
-    guid: f567237ad653eae44b55782b658233b0
-  - enabled: 0
-    path: Assets/Scenes/Dialouge.unity
-    guid: fc00dd33ecd39564e844c305b4320c91
-  - enabled: 0
-    path: Assets/Scenes/Terminal.unity
-    guid: c6a842b13cd8e7343ac0a3fd55a260bd
   m_configObjects: {}
