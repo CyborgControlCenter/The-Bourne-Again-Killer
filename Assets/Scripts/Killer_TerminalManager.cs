@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class TerminalManager : MonoBehaviour
+public class Killer_TerminalManager : MonoBehaviour
 {
     public GameObject directoryLine;
     public GameObject responseLine;
@@ -12,10 +11,10 @@ public class TerminalManager : MonoBehaviour
     public GameObject userInputLine;
     public ScrollRect scrollRect;
     public GameObject msgList;
-    Interpreter interpreter;
+    Killer_Interpreter interpreter;
     private void Start()
     {
-        interpreter = GetComponent<Interpreter>();
+        interpreter = GetComponent<Killer_Interpreter>();
     }
     private void OnGUI()
     {        
@@ -44,7 +43,6 @@ public class TerminalManager : MonoBehaviour
             terminalInput.Select();
         }
     }
-
     void ClearInputField()
     {
         terminalInput.text = "";

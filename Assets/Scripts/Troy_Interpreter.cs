@@ -3,11 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+
 
 public class Troy_Interpreter : MonoBehaviour
 {
     List<string> response = new List<string>();
     private bool foundKillerFile;
+
+    private void Awake()
+    {
+        foundKillerFile = false;
+    }
+
+    private void Update()
+    {
+        if (foundKillerFile)
+        {
+            LoadNextScene();
+        }
+    }
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(30);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public List<string> Interpret(string userInput)
     {
         response.Clear();
@@ -63,10 +84,6 @@ public class Troy_Interpreter : MonoBehaviour
             return response;
         }
     }
-    public bool getKillerFileStatus()
-    {
-        return foundKillerFile;
-    }
     private List<string> ls(string path = "")
     {
         string[] desktopFolders = new string[] {"Cat_Pictures", "Homework", "Notes", "Game_Footage", "Passwords.txt"};
@@ -75,21 +92,12 @@ public class Troy_Interpreter : MonoBehaviour
         {
             foreach(string folder in desktopFolders)
             {
-                if(folder == "Passwords.txt")
-                {
-                    break;
-                }
-                else
-                {
-                    response.Add(folder);
-                }
+                response.Add(folder);
             }
         }
         else
         {
-            string[] subFolders = path.Split('/');
-            int size = subFolders.Length;
-            switch(subFolders[size - 1])
+            switch(path)
             {
                 case "Cat_Pictures":
                     response.Add("More_Ollie_Pictures");
@@ -103,22 +111,23 @@ public class Troy_Interpreter : MonoBehaviour
                     response.Add("Native_American_Studies_QA.doc");
                     break;
                 case "Notes":
+                    response.Add("This folder is empty.");
                     break;
                 case "Game_Footage":
                     response.Add("LeBron_Top_10_Dunks.mp4");
                     response.Add("Live_XGames_20XX_Footage.mov");
                     response.Add("Summer_Olympics_20XX_Javelin_Throw.mp4");
                     break;
-                case "More_Ollie_Pictures":
+                case "Cat_Pictures/More_Ollie_Pictures":
                     response.Add("ollie.txt");
                     break;
             }
         }
         return response;
     }
-    private List<string> cat(string file)
+    private List<string> cat(string path)
     {
-        if(file == "Passwords.txt")
+        if(path == "Passwords.txt")
         {
             response.Add("ollie");
             response.Add("ollie123");
@@ -127,7 +136,7 @@ public class Troy_Interpreter : MonoBehaviour
             response.Add("0ll13");
             response.Add("Ollie246810");
         }
-        else if(file == "ollie.txt")
+        else if(path == "Cat_Pictures/More_Ollie_Pictures/ollie.txt")
         {
             foundKillerFile = true;
             
@@ -140,12 +149,12 @@ public class Troy_Interpreter : MonoBehaviour
             response.Add("Did you really think I was going to give you an actual hint. Pathetic.");
             response.Add("Good luck on your search, you're going to need it!");
         }
-        else if(file == "Philosophy_2000_Essay.doc")
+        else if(path == "Homework/Philosophy_2000_Essay.doc")
         {
             response.Add("Don't be rude to others. Treat other how you want to be treated.");
             response.Add("I don't know who came up with that but they must have been a philosopher.");
         }
-        else if(file == "Native_American_Studies_QA.doc")
+        else if(path == "Homework/Native_American_Studies_QA.doc")
         {
             response.Add("Question 1: Where were the Cherokee originate?");
             response.Add("They were from India.");

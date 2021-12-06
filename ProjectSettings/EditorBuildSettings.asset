@@ -12,15 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: b637010c3091eca40be28fccdf4ebf3c
   - enabled: 1
-    path: Assets/Scenes/IntroDialogue.unity
+    path: Assets/Scenes/Troy/TroyIntro.unity
     guid: 036d5cfd5173e044fb1a6714bfb22830
   - enabled: 1
-    path: Assets/Scenes/ConnorApartment.unity
+    path: Assets/Scenes/Troy/TroyApartment.unity
     guid: b02194131b992be49b491519f3eab6c6
   - enabled: 1
-    path: Assets/Scenes/TroyTerminal.unity
+    path: Assets/Scenes/Troy/TroyTerminal.unity
     guid: 2346850b88b8d5c4d8fbbf63cac95cde
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AlphaThankYou.unity
     guid: 27bb8c58236bd8b418a05b75c8b7f3e9
   - enabled: 0
@@ -29,4 +29,37 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Troy/FoundTroyFile.unity
+    guid: 8d5add992f108814fbfb71d856962f4a
+  - enabled: 1
+    path: Assets/Scenes/Fabio/FabioIntro.unity
+    guid: 5be11bcc3ebc0ec4484aeb31c2aeef4c
+  - enabled: 1
+    path: Assets/Scenes/Fabio/FabioOffice.unity
+    guid: 842b8d97b4821444f8255c49fef77df3
+  - enabled: 1
+    path: Assets/Scenes/Fabio/FabioTerminal.unity
+    guid: d835aa49f6301cf4eb8d815c99ced386
+  - enabled: 1
+    path: Assets/Scenes/Fabio/FoundFabioFile.unity
+    guid: f6243b32ed468834598389d823a0fca9
+  - enabled: 1
+    path: Assets/Scenes/Cass/CassIntro.unity
+    guid: 95db2f7ff3cf0e443b80e2aee368d59b
+  - enabled: 1
+    path: Assets/Scenes/Cass/CassTerminal.unity
+    guid: 1edc1edc3c4c0f846be17bb2d5ff06db
+  - enabled: 1
+    path: Assets/Scenes/Cass/FoundCassFile.unity
+    guid: 56d738b4be12f674c83662a6569d7e97
+  - enabled: 1
+    path: Assets/Scenes/Killer/CollectInfo.unity
+    guid: 615c5a2eaf54e724a93a2e2dbd3a0306
+  - enabled: 1
+    path: Assets/Scenes/Killer/KillerTerminal.unity
+    guid: 5addecccb3965424ba2f6cbac2350919
+  - enabled: 1
+    path: Assets/Scenes/Killer/KillerCaught.unity
+    guid: a9153a264a6aea64eb8d9e6470dabd0f
   m_configObjects: {}
